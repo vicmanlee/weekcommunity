@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
+    <link rel="icon" href="~/Images/favicon.ico" type="image/x-icon" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/PageStyle.css")
+    @Styles.Render("~/Content/particles.css")
+</head>
+<body>
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" style="border-color:#6c77ab;" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> 菜单 <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="@Url.Action("Index","Home")">主页</a></li>
+                    <li><a href="@Url.Action("About","Home")">关于我</a></li>
+                    <li><a href="@Url.Action("Contact","Home")">联系我</a></li>
+                    <li>
+                        <a href="@Url.Action("Login","LoginOrReg")">
+                            <button class="btn btn-divi-top">登录</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="position:fixed;z-index:-2">
+        <img src="~/Images/Banner_1.jpg" />
+    </div>
+    <div id="particles-js">
+    </div>
+    @RenderBody()
+    @Scripts.Render("~/Scripts/particles.min.js")
+    @Scripts.Render("~/Scripts/app.js")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
